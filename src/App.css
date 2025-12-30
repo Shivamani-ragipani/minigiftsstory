@@ -1,0 +1,167 @@
+/* Global Styles */
+:root {
+  /* Color Palette from Visiting Card */
+  --primary-pink: #FFB6C1;
+  --soft-pink: #FFC0CB;
+  --light-pink: #FFD4E5;
+  --blush-pink: #FFF0F5;
+  --rose-pink: #F8BBD0;
+  --accent-pink: #E91E63;
+  --medium-pink: #F06292;
+  --cream-white: #FFF5F7;
+  --pure-white: #FFFFFF;
+  --text-dark: #4A4A4A;
+  --text-light: #6B6B6B;
+  
+  /* Typography */
+  --font-heading: 'Sacramento', cursive;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 6rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--cream-white) 0%, var(--blush-pink) 50%, var(--light-pink) 100%);
+  line-height: 1.6;
+}
+
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--medium-pink) 0%, var(--accent-pink) 100%);
+  color: var(--pure-white);
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Section Spacing */
+section {
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+/* Decorative Elements */
+.decorative-mandala {
+  position: absolute;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorative-mandala-left {
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.decorative-mandala-right {
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  section {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}

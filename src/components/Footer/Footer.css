@@ -1,0 +1,134 @@
+.footer {
+  background: linear-gradient(to bottom, var(--pure-white), var(--blush-pink));
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.footer-brand {
+  text-align: left;
+}
+
+.footer-logo {
+  font-family: 'Sacramento', cursive;
+  font-size: 2.5rem;
+  color: var(--accent-pink);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.footer-tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+.heart-icon {
+  color: var(--accent-pink);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-pink);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.footer-credits {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .footer-brand {
+    text-align: center;
+  }
+  
+  .footer-logo {
+    font-size: 2rem;
+  }
+  
+  .footer-tagline {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.75rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .footer-copyright,
+  .footer-credits {
+    font-size: 0.85rem;
+  }
+}

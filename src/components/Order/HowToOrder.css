@@ -1,0 +1,125 @@
+.how-to-order {
+  background: linear-gradient(to bottom, var(--pure-white), var(--blush-pink));
+  padding: 5rem 0;
+  position: relative;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  background: var(--pure-white);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 182, 193, 0.15);
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.12);
+}
+
+.step-number-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-pink);
+}
+
+.step-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-icon-wrapper {
+  transform: scale(1.1);
+}
+
+.step-icon {
+  color: var(--accent-pink);
+}
+
+.step-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.step-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.order-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.cta-text {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: var(--text-light);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .how-to-order {
+    padding: 4rem 0;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .order-cta {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-order {
+    padding: 3rem 0;
+  }
+
+  .step-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .order-cta {
+    padding: 1.5rem;
+  }
+}

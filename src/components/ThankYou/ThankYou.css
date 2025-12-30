@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500&display=swap');
+
+
+.thank-you {
+  background: linear-gradient(to bottom, var(--blush-pink), var(--cream-white));
+  padding: 5rem 0;
+  position: relative;
+}
+
+.thank-you-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--pure-white);
+  padding: 4rem 3rem;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(233, 30, 99, 0.12);
+  border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.heart-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.05);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+.heart-icon {
+  color: var(--accent-pink);
+}
+
+.thank-you-title {
+  font-family: 'Lato', cursive;
+  font-size: 3rem;
+  color: var(--accent-pink);
+  margin-bottom: 1.5rem;
+}
+
+.thank-you-message {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.thank-you-message:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+.signature {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.signature-text {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.signature-name {
+  font-family: 'Lato', cursive;
+  font-size: 2rem;
+  color: var(--accent-pink);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .thank-you {
+    padding: 4rem 0;
+  }
+
+  .thank-you-card {
+    padding: 3rem 2rem;
+  }
+
+  .thank-you-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you {
+    padding: 3rem 0;
+  }
+
+  .thank-you-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .thank-you-title {
+    font-size: 2rem;
+  }
+
+  .thank-you-message {
+    font-size: 1rem;
+  }
+
+  .signature-name {
+    font-size: 1.75rem;
+  }
+}
