@@ -158,13 +158,6 @@ yarn build
 ✅ Clean, readable, production-ready code
 ✅ Uses Lucide React icons (no emojis)
 
-## 📞 Business Information
-
-**Mini Gifts Story**
-- Phone: +91 9347897675
-- Email: minigiftsstory@gmail.com
-- Instagram: @minigiftsstory
-
 ---
 
 **Made with ❤️ for Mini Gifts Story**
