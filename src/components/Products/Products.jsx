@@ -1,19 +1,19 @@
 import React from 'react';
 import './Products.css';
 import image1 from '../../assets/images/1.jpeg';
-import image2 from '../../assets/images/4.jpeg';
+import image10 from '../../assets/images/11.jpeg';
 import image3 from '../../assets/images/3.jpeg';
 
 const Products = () => {
   const products = [
     {
-      image: image1,
+      image: image10,
       title: 'Fridge Magnets',
       description: 'Custom-designed fridge magnets that bring your memories to life. Perfect for preserving special moments, event souvenirs, or adding a personal touch to your kitchen.',
       features: ['Personalized designs', 'High-quality printing', 'Durable materials']
     },
     {
-      image: image2,
+      image: image1,
       title: 'Badges',
       description: 'Unique badges for events, celebrations, and special occasions. From birthdays to corporate events, create memorable keepsakes that everyone will cherish.',
       features: ['Custom text & images', 'Various sizes', 'Pin or magnetic backing']
