@@ -5,44 +5,36 @@ import image8 from '../../assets/images/fridgeImg2.jpg';
 import image7 from '../../assets/images/4.jpeg';
 
 const ProductPricing = () => {
-  const products = [
-    {
-      image: image8,
-      title: 'Fridge Magnets',
-      description: 'Turn everyday spaces into lasting memories. Ideal for events, brands, and thoughtful gifting.',
-      features: [
-        'Custom sizes & shapes',
-        'High-quality print',
-        'Strong magnetic hold'
-      ],
-      startingText: 'Starting from',
-      price: '₹100 / piece'
-    },
-    {
-      image: image5,
-      title: 'Custom Badges',
-      description: 'Wear your message with pride. Perfect for campaigns, teams, and celebrations.',
-      features: [
-        'Pin-back design',
-        'Clear, sharp graphics',
-        'Lightweight & durable'
-      ],
-      startingText: 'Starting from',
-      price: '₹100 / piece'
-    },
-    {
-      image: image7,
-      title: 'Bottle-Opener Magnets',
-      description: 'A smart keepsake that blends function with memory. Great for gifting and branding.',
-      features: [
-        'Dual-purpose design',
-        'Strong opener build',
-        'Custom branding area'
-      ],
-      startingText: 'Starting from',
-      price: '₹100 / piece'
-    }
-  ];
+ const products = [
+  {
+    image: image8,
+    title: 'Fridge Magnets',
+    features: ['Custom sizes & shapes', 'High-quality print', 'Strong magnetic hold'],
+    startingText: 'Starting from',
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  },
+  {
+    image: image5,
+    title: 'Custom Badges',
+    features: ['Pin-back design', 'Clear, sharp graphics', 'Lightweight & durable'],
+    startingText: 'Starting from',
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  },
+  {
+    image: image7,
+    title: 'Bottle-Opener Magnets',
+    features: ['Dual-purpose design', 'Strong opener build', 'Custom branding area'],
+    startingText: 'Starting from',
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  }
+];
+
 
   return (
     <section className="product-pricing" id="pricing">
@@ -77,10 +69,17 @@ const ProductPricing = () => {
               </ul>
 
               <div className="price-tag">
-                <span className="price-start">{product.startingText}</span>
-                <span className="price-text">{product.price}</span>
-                <span className="price-note">Prices may vary for bulk orders</span>
-              </div>
+  <span className="price-start">{product.startingText}</span>
+
+  <div className="price-row">
+    <span className="price-original">₹{product.originalPrice}</span>
+    <span className="price-final">₹{product.discountedPrice} / Piece</span>
+    <span className="price-discount">{product.discount}</span>
+  </div>
+
+  <span className="price-note">Prices may vary for bulk orders</span>
+</div>
+
             </div>
           ))}
         </div>

@@ -5,26 +5,39 @@ import image10 from '../../assets/images/11.jpeg';
 import image3 from '../../assets/images/3.jpeg';
 
 const Products = () => {
-  const products = [
-    {
-      image: image10,
-      title: 'Fridge Magnets',
-      description: 'Custom-designed fridge magnets that bring your memories to life. Perfect for preserving special moments, event souvenirs, or adding a personal touch to your kitchen.',
-      features: ['Personalized designs', 'High-quality printing', 'Durable materials']
-    },
-    {
-      image: image1,
-      title: 'Badges',
-      description: 'Unique badges for events, celebrations, and special occasions. From birthdays to corporate events, create memorable keepsakes that everyone will cherish.',
-      features: ['Custom text & images', 'Various sizes', 'Pin or magnetic backing']
-    },
-    {
-      image: image3,
-      title: 'Mini Gifts',
-      description: 'Thoughtfully crafted mini gifts that make perfect tokens of appreciation. Ideal for party favors, thank you gifts, or expressing your love to someone special.',
-      features: ['Personalized packaging', 'Unique designs', 'Perfect for all occasions']
-    }
-  ];
+ const products = [
+  {
+    image: image10,
+    title: 'Fridge Magnets',
+    description:
+      'Custom-designed fridge magnets that bring your memories to life. Perfect for preserving special moments, event souvenirs, or adding a personal touch to your kitchen.',
+    features: ['Personalized designs', 'High-quality printing', 'Durable materials'],
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  },
+  {
+    image: image1,
+    title: 'Badges',
+    description:
+      'Unique badges for events, celebrations, and special occasions. From birthdays to corporate events, create memorable keepsakes that everyone will cherish.',
+    features: ['Custom text & images', 'Various sizes', 'Pin or magnetic backing'],
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  },
+  {
+    image: image3,
+    title: 'Mini Gifts',
+    description:
+      'Thoughtfully crafted mini gifts that make perfect tokens of appreciation. Ideal for party favors, thank you gifts, or expressing your love to someone special.',
+    features: ['Personalized packaging', 'Unique designs', 'Perfect for all occasions'],
+    originalPrice: 100,
+    discountedPrice: 85,
+    discount: '15% OFF'
+  }
+];
+
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -57,6 +70,7 @@ const Products = () => {
               <div className="product-content">
                 <h3 className="product-title">{product.title}</h3>
                 <p className="product-description">{product.description}</p>
+                
                 <ul className="product-features">
                   {product.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="product-feature-item">

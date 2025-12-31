@@ -148,6 +148,37 @@
   margin: 0;
 }
 
+.price-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.4rem 0;
+}
+
+.price-original {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.price-final {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent-pink);
+}
+
+.price-discount {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  background: linear-gradient(135deg, #ff5f8d, #ff8fb1);
+  color: #fff;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+
 /* TABLET */
 @media (max-width: 768px) {
   .product-pricing {

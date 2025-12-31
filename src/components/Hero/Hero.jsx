@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Heart, Gift, QrCode } from 'lucide-react';
 import './Hero.css';
 import firecrackersVideo from '../../assets/videos/fireCracker.mp4';
+import mobileFirecrackersVideo from '../../assets/videos/mobile-firecrackers.mp4';
 
 const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -38,18 +39,28 @@ const Hero = () => {
         {/* Full-Screen Video Background */}
         <div className="hero-video-container">
           <video
-            className="hero-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-            onLoadedData={() => setIsVideoLoaded(true)}
-          >
-            <source
-              src={firecrackersVideo}
-              type="video/mp4"
-            />
-          </video>
+  className="hero-video"
+  autoPlay
+  loop
+  muted
+  playsInline
+  onLoadedData={() => setIsVideoLoaded(true)}
+>
+  {/* Desktop video */}
+  <source
+    src={firecrackersVideo}
+    type="video/mp4"
+    media="(min-width: 769px)"
+  />
+
+  {/* Mobile portrait video */}
+  <source
+    src={mobileFirecrackersVideo}
+    type="video/mp4"
+    media="(max-width: 768px)"
+  />
+</video>
+
           
           {/* Fallback gradient if video fails */}
           {!isVideoLoaded && (
