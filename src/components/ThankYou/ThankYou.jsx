@@ -12,14 +12,13 @@ const ThankYou = () => {
           </div>
           <h2 className="thank-you-title">Thank You for Choosing Handcrafted</h2>
           <p className="thank-you-message">
-            In a world of mass production, you chose something made with care. You chose 
-            to preserve memories in tangible form, to honor moments beyond pixels and screens. 
-            Every order you place supports a small business that believes in quality, authenticity, 
-            and the power of personalized gifting.
+            In a world of mass production, you chose something made with heart.
+You chose memories over machines, stories over shortcuts.
+
+
           </p>
           <p className="thank-you-message">
-            We don't just create magnets and badges—we help memories live on walls, jackets, 
-            and refrigerators, where they belong. Thank you for trusting us with your stories.
+           We don’t just make magnets and badges, we help memories live on walls, jackets, and refrigerators, where they belong.
           </p>
           <div className="signature">
             <p className="signature-text">With gratitude,</p>

@@ -21,8 +21,7 @@ const Hero = () => {
           <h1 className="hero-title">Mini Gifts Story</h1>
           <p className="hero-tagline">Where Every Gift Tells a Story</p>
           <p className="hero-description">
-            Creating personalized fridge magnets and mini gifts that capture your most cherished memories. 
-            Each piece is crafted with love to celebrate life's special moments.
+            Premium personalized fridge magnets, badges, and mini gifts crafted to preserve life’s most meaningful moments. Designed with precision, finished with care, and created to last.
           </p>
           <button onClick={scrollToContact} className="btn btn-primary hero-cta">
             <Heart className="cta-icon" size={20} />

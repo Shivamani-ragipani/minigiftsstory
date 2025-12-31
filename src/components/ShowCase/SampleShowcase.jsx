@@ -1,5 +1,7 @@
 import React from 'react';
 import './SampleShowcase.css';
+import image7 from '../../assets/images/fridge-img.jpg';
+
 
 const SampleShowcase = () => {
   const sampleImage = 'https://customer-assets.emergentagent.com/job_keepsake-hub-1/artifacts/loaiuymz_WhatsApp%20Image%202025-12-30%20at%207.33.38%20PM.jpeg';
@@ -20,7 +22,7 @@ const SampleShowcase = () => {
           <div className="sample-card">
             <div className="sample-image-wrapper">
               <img 
-                src={sampleImage} 
+                src={image7} 
                 alt="Custom fridge magnet sample - handcrafted with precision" 
                 className="sample-image"
               />

@@ -1,46 +1,46 @@
 import React from 'react';
 import './ProductPricing.css';
 import image5 from '../../assets/images/5.jpeg';
-import image6 from '../../assets/images/6.jpeg';
-import image7 from '../../assets/images/7.jpeg';
+import image8 from '../../assets/images/fridgeImg2.jpg';
+import image7 from '../../assets/images/4.jpeg';
 
 const ProductPricing = () => {
   const products = [
     {
-      image: image5,
+      image: image8,
       title: 'Fridge Magnets',
-      description: 'Transform everyday refrigerators into memory walls. Perfect for event souvenirs, brand visibility, and heartfelt return gifts that stick around.',
+      description: 'Turn everyday spaces into lasting memories. Ideal for events, brands, and thoughtful gifting.',
       features: [
-        'Custom shapes and sizes',
-        'Vibrant, fade-resistant printing',
-        'Strong magnetic backing',
-        'Ideal for bulk event orders'
+        'Custom sizes & shapes',
+        'High-quality print',
+        'Strong magnetic hold'
       ],
-      priceRange: 'Starting from ₹15 per piece'
+      startingText: 'Starting from',
+      price: '₹15 / piece'
     },
     {
-      image: image6,
+      image: image5,
       title: 'Custom Badges',
-      description: 'Wearable statements for campaigns, conferences, and celebrations. Pin your brand or message close to hearts, literally.',
+      description: 'Wear your message with pride. Perfect for campaigns, teams, and celebrations.',
       features: [
-        'Pin-back style',
-        'Sharp, clear graphics',
-        'Lightweight and durable',
-        'Perfect for teams and events'
+        'Pin-back design',
+        'Clear, sharp graphics',
+        'Lightweight & durable'
       ],
-      priceRange: 'Starting from ₹12 per piece'
+      startingText: 'Starting from',
+      price: '₹12 / piece'
     },
     {
       image: image7,
       title: 'Bottle-Opener Magnets',
-      description: 'Utility meets memory in this dual-purpose keepsake. Ideal for bars, cafés, corporate hampers, or any celebration where functionality adds charm.',
+      description: 'A smart keepsake that blends function with memory. Great for gifting and branding.',
       features: [
-        'Functional and memorable',
-        'Strong opener mechanism',
-        'Customizable design area',
-        'Great for gifting and branding'
+        'Dual-purpose design',
+        'Strong opener build',
+        'Custom branding area'
       ],
-      priceRange: 'Starting from ₹25 per piece'
+      startingText: 'Starting from',
+      price: '₹25 / piece'
     }
   ];
 
@@ -48,45 +48,46 @@ const ProductPricing = () => {
     <section className="product-pricing" id="pricing">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Product Range & Indicative Pricing</h2>
+          <h2 className="section-title">Product Range & Pricing</h2>
           <div className="title-underline"></div>
           <p className="section-intro">
-            Transparent pricing, honest conversations. These ranges serve as a starting point 
-            for our discussion—final pricing adapts to your specific requirements.
+            Simple, transparent pricing. Final costs depend on quantity and customization.
           </p>
         </div>
 
         <div className="products-pricing-grid">
           {products.map((product, index) => (
-              <div key={index} className="pricing-card">
-                <div className="pricing-image-header">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="pricing-image"
-                  />
-                </div>
-                <h3 className="pricing-title">{product.title}</h3>
-                <p className="pricing-description">{product.description}</p>
-                
-                <ul className="pricing-features">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx} className="pricing-feature-item">{feature}</li>
-                  ))}
-                </ul>
-                
-                <div className="price-tag">
-                  <span className="price-text">{product.priceRange}</span>
-                  <span className="price-note">for bulk orders</span>
-                </div>
+            <div key={index} className="pricing-card">
+              <div className="pricing-image-header">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="pricing-image"
+                />
               </div>
-            ))}
+
+              <h3 className="pricing-title">{product.title}</h3>
+
+              <ul className="pricing-features">
+                {product.features.map((feature, idx) => (
+                  <li key={idx} className="pricing-feature-item">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="price-tag">
+                <span className="price-start">{product.startingText}</span>
+                <span className="price-text">{product.price}</span>
+                <span className="price-note">Bulk orders only</span>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="pricing-disclaimer">
           <p className="disclaimer-text">
-            Final pricing is determined by order quantity, size specifications, finish preferences, 
-            and artwork complexity. We share detailed quotations after understanding your unique needs.
+            Pricing varies based on quantity, size, finish, and artwork. Detailed quotes are shared after discussion.
           </p>
         </div>
       </div>

@@ -4,6 +4,7 @@
   position: relative;
 }
 
+/* GRID */
 .products-pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -12,89 +13,79 @@
   margin-bottom: 3rem;
 }
 
+/* CARD */
 .pricing-card {
   background: var(--pure-white);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
 
 .pricing-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 40px rgba(233, 30, 99, 0.15);
 }
 
+/* IMAGE CONTAINER — NO FIXED HEIGHT */
 .pricing-image-header {
   width: 100%;
-  height: 200px;
-  margin: 0;
-  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
+  height: auto;
   border-radius: 20px 20px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
 }
 
+/* SOFT GLOW */
 .pricing-image-header::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  z-index: 2;
-}
-
-.pricing-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.12) 0%,
+    transparent 55%
+  );
   z-index: 1;
 }
 
-.pricing-card:hover .pricing-image {
-  transform: scale(1.08);
+/* IMAGE — BIG, NATURAL, NO ZOOM, NO CROP */
+.pricing-image {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
 }
 
+/* TITLE */
 .pricing-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--text-dark);
   text-align: center;
-  margin-bottom: 1rem;
-  padding: 2rem 2rem 0 2rem;
-}
-
-.pricing-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-light);
-  text-align: center;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0 0.75rem;
   padding: 0 2rem;
 }
 
+/* FEATURES */
 .pricing-features {
   list-style: none;
   padding: 0 2rem;
-  margin: 0 0 1.5rem 0;
-  flex-grow: 1;
+  margin: 0 0 1.5rem;
 }
 
 .pricing-feature-item {
   font-size: 0.95rem;
   color: var(--text-light);
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
+  padding: 0.4rem 0 0.4rem 1.4rem;
   position: relative;
 }
 
@@ -104,35 +95,45 @@
   left: 0;
   color: var(--accent-pink);
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
+/* PRICE SECTION */
 .price-tag {
   text-align: center;
   padding: 1.5rem 2rem;
   background: linear-gradient(135deg, var(--light-pink), var(--blush-pink));
-  border-radius: 0;
   margin-top: auto;
+}
+
+.price-start {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 0.25rem;
 }
 
 .price-text {
   display: block;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--accent-pink);
-  margin-bottom: 0.25rem;
 }
 
 .price-note {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-light);
   font-style: italic;
+  margin-top: 0.25rem;
 }
 
+/* DISCLAIMER */
 .pricing-disclaimer {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 15px;
@@ -142,11 +143,12 @@
 
 .disclaimer-text {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
   color: var(--text-light);
   margin: 0;
 }
 
+/* TABLET */
 @media (max-width: 768px) {
   .product-pricing {
     padding: 4rem 0;
@@ -156,15 +158,16 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .pricing-card {
-    padding: 2rem 1.5rem;
-  }
 }
 
+/* MOBILE */
 @media (max-width: 480px) {
   .product-pricing {
     padding: 3rem 0;
+  }
+
+  .pricing-image {
+    max-width: 220px;
   }
 
   .pricing-disclaimer {

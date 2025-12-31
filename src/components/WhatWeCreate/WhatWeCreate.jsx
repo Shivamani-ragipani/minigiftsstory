@@ -7,17 +7,17 @@ const WhatWeCreate = () => {
     {
       icon: Palette,
       title: 'Event Keepsakes',
-      description: 'Transform your celebrations into tangible memories. From weddings to birthdays, our custom magnets and badges become cherished mementos that guests treasure long after the event.'
+      description: 'Turn weddings, birthdays, baby showers, and celebrations into tangible memories your guests can take home and cherish'
     },
     {
       icon: Award,
       title: 'Corporate Excellence',
-      description: 'Elevate your brand presence with precision-crafted gifting solutions. Perfect for team recognition, client appreciation, and promotional campaigns that leave a lasting impression.'
+      description: 'Professional, precision-crafted gifts for branding, promotions, team recognition, and client appreciation—designed to leave a lasting impression.'
     },
     {
       icon: Package,
       title: 'Thoughtful Return Gifts',
-      description: 'Say thank you in the most meaningful way. Our handcrafted pieces serve as perfect tokens of gratitude, combining functionality with sentiment in every design.'
+      description: 'Say thank you in the most meaningful way. Meaningful tokens of gratitude that combine usefulness with sentiment.'
     }
   ];
 
@@ -28,9 +28,7 @@ const WhatWeCreate = () => {
           <h2 className="section-title">What We Create</h2>
           <div className="title-underline"></div>
           <p className="section-intro">
-            Every piece we craft is a labor of love, designed to capture moments that matter. 
-            Specializing in fridge magnets, badges, and bottle-opener magnets, we bring your 
-            vision to life with meticulous attention to detail and uncompromising quality.
+            Every creation is a balance of creativity, quality, and consistency. We specialize in:
           </p>
         </div>
 
