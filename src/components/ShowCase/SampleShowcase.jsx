@@ -13,7 +13,7 @@ const SampleShowcase = () => {
           <h2 className="section-title">Crafted With Care</h2>
           <div className="title-underline"></div>
           <p className="section-intro">
-            Every piece tells a story. Here's a glimpse of our handcrafted work—precision 
+            Every piece tells a story. Here's a glimpse of our handcrafted work, precision 
             printing, thoughtful design, and attention to detail in every creation.
           </p>
         </div>
