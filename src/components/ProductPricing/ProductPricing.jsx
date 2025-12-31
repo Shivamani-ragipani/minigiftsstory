@@ -16,7 +16,7 @@ const ProductPricing = () => {
         'Strong magnetic hold'
       ],
       startingText: 'Starting from',
-      price: '₹15 / piece'
+      price: '₹100 / piece'
     },
     {
       image: image5,
@@ -28,7 +28,7 @@ const ProductPricing = () => {
         'Lightweight & durable'
       ],
       startingText: 'Starting from',
-      price: '₹12 / piece'
+      price: '₹100 / piece'
     },
     {
       image: image7,
@@ -40,7 +40,7 @@ const ProductPricing = () => {
         'Custom branding area'
       ],
       startingText: 'Starting from',
-      price: '₹25 / piece'
+      price: '₹100 / piece'
     }
   ];
 
@@ -79,7 +79,7 @@ const ProductPricing = () => {
               <div className="price-tag">
                 <span className="price-start">{product.startingText}</span>
                 <span className="price-text">{product.price}</span>
-                <span className="price-note">Bulk orders only</span>
+                <span className="price-note">Prices may vary for bulk orders</span>
               </div>
             </div>
           ))}
