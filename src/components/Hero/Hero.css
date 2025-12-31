@@ -297,11 +297,11 @@
 
 .cta-primary .cta-text {
   
-  color: #ffffff; /* force white for text */
+  color: #ffffff; 
 }
 
 .cta-primary .cta-icon {
-  color: #ffffff; /* force white for icon */
+  color: #ffffff; 
 }
 
 .cta-primary:hover {
@@ -682,7 +682,7 @@
   }
   
   .cta-primary {
-     gap: 0.5rem;           /* slightly tighter spacing */
+     gap: 0.5rem;   
     padding: 1rem 1.75rem; 
     font-size: 0.9375rem;
   }

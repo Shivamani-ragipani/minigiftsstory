@@ -1,10 +1,46 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import './ProductPricing.css';
 import image5 from '../../assets/images/5.jpeg';
 import image8 from '../../assets/images/fridgeImg2.jpg';
 import image7 from '../../assets/images/4.jpeg';
 
+
+
 const ProductPricing = () => {
+  const [timeLeft, setTimeLeft] = useState({
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+});
+
+useEffect(() => {
+  const getISTTime = () => {
+    const now = new Date();
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    return new Date(utc + 5.5 * 60 * 60 * 1000);
+  };
+
+  const timer = setInterval(() => {
+    const nowIST = getISTTime();
+
+    // Next day 12:00 AM IST
+    const nextDayIST = new Date(nowIST);
+    nextDayIST.setHours(24, 0, 0, 0);
+
+    const diff = nextDayIST - nowIST;
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    setTimeLeft({ hours, minutes, seconds });
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, []);
+
+
  const products = [
   {
     image: image8,
@@ -46,6 +82,27 @@ const ProductPricing = () => {
             Simple, transparent pricing. Final costs depend on quantity and customization.
           </p>
         </div>
+
+<div className="offer-timer">
+  <span className="timer-label">Offer Ends In</span>
+
+  <div className="timer-box">
+    <div className="time-unit">
+      <span className="time-value">{String(timeLeft.hours).padStart(2, '0')}</span>
+      <span className="time-label">HRS</span>
+    </div>
+    <span className="time-separator">:</span>
+    <div className="time-unit">
+      <span className="time-value">{String(timeLeft.minutes).padStart(2, '0')}</span>
+      <span className="time-label">MIN</span>
+    </div>
+    <span className="time-separator">:</span>
+    <div className="time-unit">
+      <span className="time-value">{String(timeLeft.seconds).padStart(2, '0')}</span>
+      <span className="time-label">SEC</span>
+    </div>
+  </div>
+</div>
 
         <div className="products-pricing-grid">
           {products.map((product, index) => (
