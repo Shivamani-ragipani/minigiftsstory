@@ -19,11 +19,11 @@ const WhyChooseUs = () => {
       title: 'Your Brand, Your Way',
       description: 'Bring your complete artwork or let us guide your vision. Names, dates, logos, taglines—we customize every element to reflect your unique story and brand identity.'
     },
-    {
-      icon: MessageCircle,
-      title: 'Design Support Included',
-      description: 'Not a designer? No worries. Share your ideas, photos, or text, and we will help arrange them into polished layouts that capture your vision beautifully.'
-    }
+    // {
+    //   icon: MessageCircle,
+    //   title: 'Design Support Included',
+    //   description: 'Not a designer? No worries. Share your ideas, photos, or text, and we will help arrange them into polished layouts that capture your vision beautifully.'
+    // }
   ];
 
   return (

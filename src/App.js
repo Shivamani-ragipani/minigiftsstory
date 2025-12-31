@@ -22,13 +22,14 @@ function App() {
       <main id="main" role="main">
         <Hero />
         <About />
-        <WhatWeCreate />
-        <WhyChooseUs />
         <Products />
+        {/* <WhatWeCreate /> */}
+        <WhyChooseUs />
+
         <ProductPricing />
         <SampleShowcase />
         <ClientTestimonials />
-        <HowToOrder />
+        {/* <HowToOrder /> */}
         <Contact />
         <ThankYou />
       </main>

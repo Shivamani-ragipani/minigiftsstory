@@ -14,11 +14,11 @@ const About = () => {
         <div className="about-content">
           <div className="about-main-text">
             <p className="about-description">
-              Mini Gifts Story transforms memories into elegant keepsakes. We specialize in custom fridge magnets, personalized badges, and thoughtful mini gifts for events, corporate branding, and return gifting.
+              <strong>Mini Gifts Story</strong> transforms <strong>memories</strong> into elegant keepsakes. We specialize in <strong>custom fridge magnets</strong>, <strong>personalized badges</strong>, and <strong>thoughtful mini gifts</strong> for events, corporate branding, and return gifting.
 
            </p>
             <p className="about-description">
-              Every piece is handcrafted with attention to detail, ensuring your memories are preserved beautifully, not just printed.
+              Every piece is <strong>handcrafted</strong> with attention to detail, ensuring your <strong>memories are preserved beautifully</strong>, not just printed.
  
             </p>
           </div>
