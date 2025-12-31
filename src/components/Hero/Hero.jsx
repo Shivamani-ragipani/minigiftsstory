@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, QrCode } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -24,7 +24,7 @@ const Hero = () => {
             Premium personalized fridge magnets, badges, and mini gifts crafted to preserve life’s most meaningful moments. Designed with precision, finished with care, and created to last.
           </p>
           <button onClick={scrollToContact} className="btn btn-primary hero-cta">
-            <Heart className="cta-icon" size={20} />
+            <QrCode className="cta-icon" size={20} />
             Scan for Booking
           </button>
         </div>
