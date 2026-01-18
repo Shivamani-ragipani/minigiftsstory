@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles, Heart, Gift, QrCode } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, Heart, QrCode } from 'lucide-react';
 import './Hero.css';
 import firecrackersVideo from '../../assets/videos/fireCracker.mp4';
 import mobileFirecrackersVideo from '../../assets/videos/mobile-firecrackers.mp4';

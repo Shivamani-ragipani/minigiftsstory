@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartHandshake, CheckCircle, Sparkles, MessageCircle } from 'lucide-react';
+import { HeartHandshake, CheckCircle, Sparkles } from 'lucide-react';
 import './WhyChooseUs.css';
 
 const WhyChooseUs = () => {
