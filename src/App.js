@@ -8,8 +8,7 @@ import ClientTestimonials from './components/Testimonials/ClientTestimonials.jsx
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs.jsx';
 import Products from './components/Products/Products.jsx';
 import ProductPricing from './components/ProductPricing/ProductPricing.jsx';
-// import ClientTestimonials from './components/Testimonials/ClientTestimonials.jsx';
-import HowToOrder from './components/Order/HowToOrder.jsx';
+// import HowToOrder from './components/Order/HowToOrder.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import ThankYou from './components/ThankYou/ThankYou.jsx';
 import Footer from './components/Footer/Footer.jsx';
