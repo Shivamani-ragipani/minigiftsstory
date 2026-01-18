@@ -13,6 +13,7 @@ import Contact from './components/Contact/Contact.jsx';
 import ThankYou from './components/ThankYou/ThankYou.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import SampleShowcase from './components/ShowCase/SampleShowcase.jsx';
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <ThankYou />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
