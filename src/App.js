@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About.jsx';
-// import ClientTestimonials from './components/Testimonials/ClientTestimonials.jsx';
+import ClientTestimonials from './components/Testimonials/ClientTestimonials.jsx';
 import WhatWeCreate from './components/WhatWeCreate/WhatWeCreate.jsx';
 import WhyChooseUs from './components/WhyChooseUs/WhyChooseUs.jsx';
 import Products from './components/Products/Products.jsx';
