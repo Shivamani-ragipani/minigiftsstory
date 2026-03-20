@@ -5,7 +5,8 @@ import './Footer.css';
 const WHATSAPP_NUMBER = '919347897675';
 
 const Footer = ({ navigate }) => {
-  const year = new Date().getFullYear();
+  // const year = new Date().getFullYear();
+  const year = 2025;
 
   const scrollTo = (id) => {
     navigate('home');
