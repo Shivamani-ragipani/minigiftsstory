@@ -293,11 +293,166 @@
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.4rem; }
-  .hero-stats { gap: 20px; }
-  .hero-actions { flex-direction: column; align-items: center; }
-  .hero-cta-primary, .hero-cta-secondary { width: 100%; max-width: 280px; }
-  .hero-visual { height: 240px; }
-  .main-card { width: 160px; padding: 18px 14px; }
-  .hero-float-item { display: none; }
+
+.hero {
+min-height: auto;
+padding: 80px 18px 50px;
+display: flex;
+align-items: center;
+background: linear-gradient(180deg, #FDF8F4 0%, #FFFDFC 100%);
+}
+
+/* Keep subtle background for richness */
+.hero-blob {
+opacity: 0.25;
+filter: blur(70px);
+}
+
+.hero-grid {
+display: none;
+}
+
+/* Layout */
+.hero-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 28px;
+padding: 0;
+}
+
+/* Remove heavy visuals only */
+.hero-visual,
+.secondary-card,
+.hero-floats,
+.hero-float-item {
+display: none;
+}
+
+/* Keep ONE clean visual element */
+.main-card {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 120px;
+padding: 16px 10px;
+border-radius: 18px;
+background: #ffffff;
+box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+margin-bottom: 6px;
+}
+
+.card-emoji {
+font-size: 2rem;
+margin-bottom: 6px;
+}
+
+.card-title {
+font-size: 0.75rem;
+font-weight: 600;
+}
+
+.card-desc {
+font-size: 0.65rem;
+color: var(--clr-muted);
+}
+
+/* Content */
+.hero-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+max-width: 100%;
+}
+
+/* Badge */
+.hero-badge {
+font-size: 0.65rem;
+padding: 6px 12px;
+margin-bottom: 12px;
+border-radius: 999px;
+}
+
+/* Title */
+.hero-title {
+font-size: 2.2rem;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.hero-title-line2 {
+margin-top: 4px;
+}
+
+/* Subtitle */
+.hero-subtitle {
+font-size: 0.95rem;
+line-height: 1.6;
+margin-bottom: 22px;
+max-width: 95%;
+}
+
+/* CTA Buttons */
+.hero-actions {
+display: flex;
+flex-direction: column;
+gap: 12px;
+width: 100%;
+margin-bottom: 26px;
+}
+
+.hero-cta-primary {
+width: 100%;
+height: 50px;
+font-size: 0.95rem;
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 8px 20px rgba(181,112,78,0.18);
+}
+
+.hero-cta-secondary {
+width: 100%;
+height: 48px;
+font-size: 0.9rem;
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Stats - make them look premium */
+.hero-stats {
+display: flex;
+gap: 10px;
+width: 100%;
+justify-content: space-between;
+}
+
+.hero-stat {
+flex: 1;
+background: rgba(255,255,255,0.8);
+border-radius: 14px;
+padding: 12px 8px;
+box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+backdrop-filter: blur(6px);
+}
+
+.stat-value {
+font-size: 1.15rem;
+font-weight: 700;
+}
+
+.stat-label {
+font-size: 0.65rem;
+}
+
+/* Remove scroll hint */
+.hero-scroll-hint {
+display: none;
+}
+
 }

@@ -37,16 +37,28 @@ const ClientTestimonials = () => {
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.load();
-      videoRef.current.play().catch(() => {});
     }
   }, [videoIndex]);
 
-  const nextVideo = () => setVideoIndex(i => (i + 1) % videos.length);
-  const prevVideo = () => setVideoIndex(i => (i - 1 + videos.length) % videos.length);
+  const nextVideo = () => {
+    if (videoRef.current) videoRef.current.pause();
+    setVideoIndex((i) => (i + 1) % videos.length);
+  };
+
+  const prevVideo = () => {
+    if (videoRef.current) videoRef.current.pause();
+    setVideoIndex((i) => (i - 1 + videos.length) % videos.length);
+  };
+
+  const handleVideoChange = (index) => {
+    if (videoRef.current) videoRef.current.pause();
+    setVideoIndex(index);
+  };
 
   return (
     <section className="testimonials-section" id="testimonials" aria-label="Client Testimonials">
       <div className="container">
+
         <div className="testimonials-header">
           <span className="section-badge">💬 Stories</span>
           <h2 className="section-title">Stories From Our Clients</h2>
@@ -57,69 +69,86 @@ const ClientTestimonials = () => {
         </div>
 
         <div className="testimonials-layout">
-          {/* Video Column */}
+
           <div className="video-column">
             <div className="video-wrapper">
+
               <video
                 ref={videoRef}
                 className="testimonial-video"
                 controls
-                preload="metadata"
+                controlsList="nodownload"
                 playsInline
+                preload="metadata"
+                muted={false}
                 aria-label={`Client testimonial video ${videoIndex + 1}`}
               >
                 <source src={videos[videoIndex]} type="video/mp4" />
-                Your browser does not support video playback.
               </video>
 
               <div className="video-controls">
-                <button className="vid-nav-btn" onClick={prevVideo} aria-label="Previous video">
+                <button className="vid-nav-btn" onClick={prevVideo}>
                   <ChevronLeft size={20} />
                 </button>
+
                 <div className="vid-dots">
                   {videos.map((_, i) => (
                     <button
                       key={i}
                       className={`vid-dot${i === videoIndex ? ' active' : ''}`}
-                      onClick={() => setVideoIndex(i)}
-                      aria-label={`Video ${i + 1}`}
+                      onClick={() => handleVideoChange(i)}
                     />
                   ))}
                 </div>
-                <button className="vid-nav-btn" onClick={nextVideo} aria-label="Next video">
+
+                <button className="vid-nav-btn" onClick={nextVideo}>
                   <ChevronRight size={20} />
                 </button>
               </div>
+
             </div>
-            <p className="video-caption">Watch what our customers say about us 💝</p>
+
+            <p className="video-caption">
+              Watch what our customers say about us 💝
+            </p>
           </div>
 
-          {/* Text Testimonials */}
           <div className="text-testimonials">
             {TEXT_TESTIMONIALS.map(({ name, role, rating, text, location }) => (
               <div className="text-testimonial-card" key={name}>
-                <div className="testimonial-quote-icon"><Quote size={20} /></div>
+                <div className="testimonial-quote-icon">
+                  <Quote size={20} />
+                </div>
+
                 <div className="testimonial-stars">
                   {[...Array(rating)].map((_, i) => (
                     <Star key={i} size={14} fill="currentColor" className="t-star" />
                   ))}
                 </div>
+
                 <p className="testimonial-text">"{text}"</p>
+
                 <div className="testimonial-author">
                   <div className="author-avatar">{name[0]}</div>
                   <div>
                     <div className="author-name">{name}</div>
-                    <div className="author-meta">{role} · {location}</div>
+                    <div className="author-meta">
+                      {role} · {location}
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
 
         <div className="testimonial-footer-note">
-          <p>Every order is a relationship. Every delivery, a promise kept. Thank you for trusting us with your memories. 🙏</p>
+          <p>
+            Every order is a relationship. Every delivery, a promise kept. Thank you for trusting us with your memories. 🙏
+          </p>
         </div>
+
       </div>
     </section>
   );
