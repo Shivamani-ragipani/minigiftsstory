@@ -60,7 +60,7 @@ const ClientTestimonials = () => {
       <div className="container">
 
         <div className="testimonials-header">
-          <span className="section-badge">💬 Stories</span>
+          <span className="section-badge">Stories</span>
           <h2 className="section-title">Stories From Our Clients</h2>
           <div className="title-underline centered" />
           <p className="section-subtitle" style={{ textAlign: 'center', margin: '0 auto' }}>
@@ -145,7 +145,7 @@ const ClientTestimonials = () => {
 
         <div className="testimonial-footer-note">
           <p>
-            Every order is a relationship. Every delivery, a promise kept. Thank you for trusting us with your memories. 🙏
+            Every order is a relationship. Every delivery, a promise kept. Thank you for trusting us with your memories.
           </p>
         </div>
 
