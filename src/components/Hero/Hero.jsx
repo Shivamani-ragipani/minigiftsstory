@@ -1,150 +1,143 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles, Heart, Gift, QrCode } from 'lucide-react';
+import React from 'react';
+import { Gift, Star, Sparkles, ArrowRight, ShoppingBag } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 import './Hero.css';
-import firecrackersVideo from '../../assets/videos/fireCracker.mp4';
-import mobileFirecrackersVideo from '../../assets/videos/mobile-firecrackers.mp4';
+
+const FLOATING_ITEMS = [
+  { icon: '🎁', delay: '0s',   x: '8%',  y: '20%', size: 48 },
+  { icon: '✨', delay: '1.2s', x: '88%', y: '15%', size: 32 },
+  { icon: '💝', delay: '0.6s', x: '5%',  y: '68%', size: 40 },
+  { icon: '🎀', delay: '1.8s', x: '90%', y: '63%', size: 44 },
+  { icon: '⭐', delay: '0.3s', x: '75%', y: '80%', size: 28 },
+  { icon: '🌸', delay: '2.1s', x: '15%', y: '86%', size: 32 },
+];
+
+const STATS = [
+  { value: '500+',  label: 'Happy Clients' },
+  { value: '1000+', label: 'Gifts Created' },
+  { value: '4.9★',  label: 'Avg Rating'    },
+];
 
 const Hero = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const { navigate } = useCart();
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToProducts = () => {
+    const el = document.getElementById('products');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <>
-      {/* Premium New Year 2026 Offer Banner */}
-      {/* <div className="offer-banner">
-        <div className="offer-content">
-          <div className="offer-sparkle">
-            <Sparkles size={18} className="sparkle-icon" />
-          </div>
-          <span className="offer-text">
-            <strong>NEW YEAR 2026 SPECIAL</strong>
-            <span className="offer-divider">•</span>
-            Flat <span className="offer-highlight">15% OFF</span> on All Personalized Gifts
-            <span className="offer-divider">•</span>
-            Limited Time Only
+    <section className="hero" id="home" aria-label="Hero — Mini Gifts Story">
+
+      {/* Decorative Background */}
+      <div className="hero-bg" aria-hidden="true">
+        <div className="hero-blob blob-1" />
+        <div className="hero-blob blob-2" />
+        <div className="hero-blob blob-3" />
+        <div className="hero-grid" />
+      </div>
+
+      {/* Floating Emoji Decorations */}
+      <div className="hero-floats" aria-hidden="true">
+        {FLOATING_ITEMS.map((item, i) => (
+          <span
+            key={i}
+            className="hero-float-item"
+            style={{ left: item.x, top: item.y, fontSize: item.size, animationDelay: item.delay }}
+          >
+            {item.icon}
           </span>
-          <div className="offer-sparkle">
-            <Sparkles size={18} className="sparkle-icon" />
-          </div>
-        </div>
-      </div> */}
+        ))}
+      </div>
 
-      <section className="hero" id="home">
-        {/* Full-Screen Video Background */}
-        <div className="hero-video-container">
-          <video
-  className="hero-video"
-  autoPlay
-  loop
-  muted
-  playsInline
-  onLoadedData={() => setIsVideoLoaded(true)}
->
-  {/* Desktop video */}
-  <source
-    src={firecrackersVideo}
-    type="video/mp4"
-    media="(min-width: 769px)"
-  />
+      <div className="hero-container container">
 
-  {/* Mobile portrait video */}
-  <source
-    src={mobileFirecrackersVideo}
-    type="video/mp4"
-    media="(max-width: 768px)"
-  />
-</video>
-
-          
-          {/* Fallback gradient if video fails */}
-          {!isVideoLoaded && (
-            <div className="hero-video-fallback" />
-          )}
-          
-          {/* Dark overlay for text readability */}
-          <div className="hero-overlay" />
-          
-          {/* Ambient glow effects */}
-          <div className="ambient-glow glow-1" />
-          <div className="ambient-glow glow-2" />
-          <div className="ambient-glow glow-3" />
-        </div>
-
-        {/* Floating particles for festive atmosphere */}
-        <div className="particles-container">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${8 + Math.random() * 7}s`,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Main Hero Content */}
+        {/* ── Left: Content ── */}
         <div className="hero-content">
-          {/* New Year 2026 Badge */}
-          <div className="year-badge">
-            <div className="year-badge-inner">
-              <Sparkles size={16} className="badge-icon" />
-              <span className="badge-text">New Year 2026</span>
-              <Sparkles size={16} className="badge-icon" />
-            </div>
+
+          <div className="hero-badge">
+            <Sparkles size={14} aria-hidden="true" />
+            <span>Premium Personalized Gifts</span>
           </div>
 
-          {/* Main Content Container */}
-          <div className="hero-main">
-            {/* Brand Logo/Title */}
-            <div className="brand-container">
-              <h1 className="brand-title">
-                <span className="brand-mini">Mini</span>
-                <span className="brand-gifts">Gifts Story</span>
-              </h1>
-              <div className="brand-divider">
-                <Heart size={24} className="heart-icon" />
+          <h1 className="hero-title">
+            <span className="hero-title-line1">Every Gift</span>
+            <span className="hero-title-line2">Tells a Story</span>
+          </h1>
+
+          <p className="hero-subtitle">
+            Handcrafted custom fridge magnets, badges &amp; mini gifts — made with love
+            for every occasion, event, and memory worth keeping forever.
+          </p>
+
+          <div className="hero-actions">
+            <button className="btn btn-primary hero-cta-primary" onClick={scrollToProducts}>
+              <Gift size={18} aria-hidden="true" />
+              Shop Now
+              <ArrowRight size={16} className="arrow-icon" aria-hidden="true" />
+            </button>
+            <button className="btn btn-outline hero-cta-secondary" onClick={() => navigate('cart')}>
+              <ShoppingBag size={18} aria-hidden="true" />
+              View Cart
+            </button>
+          </div>
+
+          <div className="hero-stats" aria-label="Business highlights">
+            {STATS.map(({ value, label }) => (
+              <div className="hero-stat" key={label}>
+                <span className="stat-value">{value}</span>
+                <span className="stat-label">{label}</span>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Right: Visual ── */}
+        <div className="hero-visual" aria-hidden="true">
+
+          {/* Background orbs */}
+          <div className="hero-orb orb-1" />
+          <div className="hero-orb orb-2" />
+
+          {/* Main floating card */}
+          <div className="hero-card main-card">
+            <div className="card-glow" />
+            <div className="card-emoji">🎁</div>
+            <div className="card-content">
+              <span className="card-title">Personalized Gifts</span>
+              <span className="card-desc">Crafted Just For You</span>
             </div>
-
-            {/* Tagline */}
-            <p className="hero-tagline">
-              Where Every Gift Tells a Story
-            </p>
-
-    
-
-            {/* Description */}
-            <p className="hero-description">
-              Celebrate the New Year with timeless memories.
-               {/* Premium personalized gifts
-              <br className="hidden sm:block" />
-              crafted with precision and designed to last forever. */}
-            </p>
-
-            {/* CTA Section */}
-            <div className="cta-section">
-              <button onClick={scrollToContact} className="cta-primary">
-                <QrCode size={22} className="cta-icon" />
-                <span className="cta-text">Scan for Booking</span>
-                <div className="cta-shine" />
-              </button>
-            
+            <div className="card-star">
+              <Star size={12} fill="currentColor" /> 4.9
             </div>
           </div>
 
-  
+          {/* Pill cards */}
+          <div className="hero-card secondary-card top-card">
+            <span role="img" aria-label="badge">🏅</span>
+            <div>
+              <div className="pill-title">Custom Badges</div>
+              <div className="pill-sub">From ₹85/piece</div>
+            </div>
+          </div>
+
+          <div className="hero-card secondary-card bottom-card">
+            <span role="img" aria-label="magnet">🧲</span>
+            <div>
+              <div className="pill-title">Fridge Magnets</div>
+              <div className="pill-sub">Best seller ✨</div>
+            </div>
+          </div>
         </div>
-      </section>
-    </>
+
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="hero-scroll-hint" aria-hidden="true">
+        <div className="scroll-dot" />
+      </div>
+
+    </section>
   );
 };
 

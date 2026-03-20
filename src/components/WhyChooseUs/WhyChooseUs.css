@@ -1,97 +1,87 @@
-.why-choose-us {
-  background: linear-gradient(to bottom, var(--cream-white), var(--pure-white));
-  padding: 5rem 0;
-  position: relative;
+.why-section {
+  padding-block: 96px;
+  background: var(--clr-bg);
 }
 
-.reasons-grid {
+.why-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.reason-card {
-  background: var(--pure-white);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.why-card {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
 }
 
-.reason-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(233, 30, 99, 0.12);
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-gold));
+  transform: scaleX(0);
+  transition: transform var(--transition);
+  transform-origin: left;
 }
 
-.reason-icon-container {
-  width: 70px;
-  height: 70px;
-  background: linear-gradient(135deg, var(--light-pink), var(--soft-pink));
-  border-radius: 15px;
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(181,112,78,0.2);
+}
+
+.why-card:hover::before { transform: scaleX(1); }
+
+.why-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--clr-pink-light), var(--clr-cream));
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease;
+  color: var(--clr-primary);
+  margin-bottom: 20px;
+  transition: var(--transition);
 }
 
-.reason-card:hover .reason-icon-container {
-  transform: rotate(5deg) scale(1.05);
+.why-card:hover .why-icon {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-gold));
+  color: white;
+  transform: scale(1.1);
 }
 
-.reason-icon {
-  color: var(--accent-pink);
-}
-
-.reason-content {
-  flex-grow: 1;
-}
-
-.reason-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.375rem;
+.why-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 0.75rem;
+  color: var(--clr-text);
+  margin-bottom: 10px;
 }
 
-.reason-description {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-light);
+.why-desc {
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
 }
 
-@media (max-width: 768px) {
-  .why-choose-us {
-    padding: 4rem 0;
-  }
-
-  .reasons-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .reason-card {
-    padding: 1.75rem;
-  }
+@media (max-width: 1024px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 480px) {
-  .why-choose-us {
-    padding: 3rem 0;
-  }
-
-  .reason-card {
-    padding: 1.5rem;
-  }
-
-  .reason-icon-container {
-    width: 60px;
-    height: 60px;
-  }
+@media (max-width: 640px) {
+  .why-section { padding-block: 64px; }
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card:hover { transform: none; }
 }

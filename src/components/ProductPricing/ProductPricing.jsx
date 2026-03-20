@@ -1,154 +1,129 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { Check, MessageCircle, Star } from 'lucide-react';
 import './ProductPricing.css';
 import image5 from '../../assets/images/5.jpeg';
 import image8 from '../../assets/images/fridgeImg2.jpg';
 import image7 from '../../assets/images/4.jpeg';
 
-
-
-const ProductPricing = () => {
-  const [timeLeft, setTimeLeft] = useState({
-  hours: 0,
-  minutes: 0,
-  seconds: 0,
-});
-
-useEffect(() => {
-  const getISTTime = () => {
-    const now = new Date();
-    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-    return new Date(utc + 5.5 * 60 * 60 * 1000);
-  };
-
-  const timer = setInterval(() => {
-    const nowIST = getISTTime();
-
-    // Next day 12:00 AM IST
-    const nextDayIST = new Date(nowIST);
-    nextDayIST.setHours(24, 0, 0, 0);
-
-    const diff = nextDayIST - nowIST;
-
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    setTimeLeft({ hours, minutes, seconds });
-  }, 1000);
-
-  return () => clearInterval(timer);
-}, []);
-
-
- const products = [
+const PLANS = [
   {
     image: image8,
     title: 'Fridge Magnets',
-    features: ['Custom sizes & shapes', 'High-quality print', 'Strong magnetic hold'],
-    startingText: 'Starting from',
+    subtitle: 'Most Popular',
+    featured: true,
+    price: 85,
     originalPrice: 100,
-    discountedPrice: 85,
-    discount: '15% OFF'
+    minQty: 10,
+    features: [
+      'Custom sizes & shapes',
+      'High-quality UV print',
+      'Strong magnetic hold',
+      'Glossy or matte finish',
+      'Bulk discounts available',
+    ],
   },
   {
     image: image5,
     title: 'Custom Badges',
-    features: ['Pin-back design', 'Clear, sharp graphics', 'Lightweight & durable'],
-    startingText: 'Starting from',
+    subtitle: 'Best for Events',
+    featured: false,
+    price: 85,
     originalPrice: 100,
-    discountedPrice: 85,
-    discount: '15% OFF'
+    minQty: 10,
+    features: [
+      'Pin-back design',
+      'Crystal clear graphics',
+      'Lightweight & durable',
+      'Various sizes',
+      'Corporate branding',
+    ],
   },
   {
     image: image7,
-    title: 'Bottle-Opener Magnets',
-    features: ['Dual-purpose design', 'Strong opener build', 'Custom branding area'],
-    startingText: 'Starting from',
+    title: 'Bottle Opener Magnets',
+    subtitle: 'Unique Gift',
+    featured: false,
+    price: 85,
     originalPrice: 100,
-    discountedPrice: 85,
-    discount: '15% OFF'
-  }
+    minQty: 10,
+    features: [
+      'Dual-purpose design',
+      'Strong opener build',
+      'Custom branding area',
+      'Perfect party favor',
+      'Bulk orders welcome',
+    ],
+  },
 ];
 
-
-  return (
-    <section className="product-pricing" id="pricing">
-      <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Product Range & Pricing</h2>
-          <div className="title-underline"></div>
-          <p className="section-intro">
-            Simple, transparent pricing. Final costs depend on quantity and customization.
-          </p>
+const ProductPricing = ({ navigate }) => (
+  <section className="pricing-section" id="pricing" aria-label="Product Pricing">
+    <div className="container">
+      <div className="pricing-header">
+        <span className="section-badge">💰 Transparent Pricing</span>
+        <h2 className="section-title">Product Range & Pricing</h2>
+        <div className="title-underline centered" />
+        <p className="section-subtitle" style={{ textAlign: 'center', margin: '0 auto 16px' }}>
+          Simple, transparent pricing. Final costs may vary based on quantity and customization details.
+        </p>
+        <div className="pricing-note-pill">
+          <Star size={14} fill="currentColor" />
+          Flat 15% OFF on all products — Limited time offer!
         </div>
+      </div>
 
-<div className="offer-timer">
-  <span className="timer-label">Offer Ends In</span>
+      <div className="pricing-grid">
+        {PLANS.map((plan) => (
+          <div key={plan.title} className={`pricing-card${plan.featured ? ' featured' : ''}`}>
+            {plan.featured && <div className="featured-label">✨ Most Popular</div>}
 
-  <div className="timer-box">
-    <div className="time-unit">
-      <span className="time-value">{String(timeLeft.hours).padStart(2, '0')}</span>
-      <span className="time-label">HRS</span>
-    </div>
-    <span className="time-separator">:</span>
-    <div className="time-unit">
-      <span className="time-value">{String(timeLeft.minutes).padStart(2, '0')}</span>
-      <span className="time-label">MIN</span>
-    </div>
-    <span className="time-separator">:</span>
-    <div className="time-unit">
-      <span className="time-value">{String(timeLeft.seconds).padStart(2, '0')}</span>
-      <span className="time-label">SEC</span>
-    </div>
-  </div>
-</div>
+            <div className="pricing-img-wrap">
+              <img src={plan.image} alt={plan.title} className="pricing-img" loading="lazy" />
+            </div>
 
-        <div className="products-pricing-grid">
-          {products.map((product, index) => (
-            <div key={index} className="pricing-card">
-              <div className="pricing-image-header">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="pricing-image"
-                />
+            <div className="pricing-body">
+              <span className="pricing-subtitle">{plan.subtitle}</span>
+              <h3 className="pricing-title">{plan.title}</h3>
+
+              <div className="pricing-price">
+                <span className="price-from">Starting from</span>
+                <div className="price-row">
+                  <span className="price-old">₹{plan.originalPrice}</span>
+                  <span className="price-new">₹{plan.price}<small>/piece</small></span>
+                  <span className="price-badge">15% OFF</span>
+                </div>
+                <span className="price-min">Min. order: {plan.minQty} pcs</span>
               </div>
 
-              <h3 className="pricing-title">{product.title}</h3>
-
               <ul className="pricing-features">
-                {product.features.map((feature, idx) => (
-                  <li key={idx} className="pricing-feature-item">
-                    {feature}
+                {plan.features.map(f => (
+                  <li key={f} className="pricing-feature">
+                    <span className="feat-check"><Check size={13} /></span>
+                    {f}
                   </li>
                 ))}
               </ul>
 
-              <div className="price-tag">
-  <span className="price-start">{product.startingText}</span>
-
-  <div className="price-row">
-    <span className="price-original">₹{product.originalPrice}</span>
-    <span className="price-final">₹{product.discountedPrice} / Piece</span>
-    <span className="price-discount">{product.discount}</span>
-  </div>
-
-  <span className="price-note">Prices may vary for bulk orders</span>
-</div>
-
+              <button
+                className={`pricing-btn ${plan.featured ? 'btn btn-primary' : 'btn btn-outline'}`}
+                onClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <MessageCircle size={16} />
+                Get a Quote
+              </button>
             </div>
-          ))}
-        </div>
-
-        <div className="pricing-disclaimer">
-          <p className="disclaimer-text">
-            Pricing varies based on quantity, size, finish, and artwork. Detailed quotes are shared after discussion.
-          </p>
-        </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+
+      <p className="pricing-disclaimer">
+        * Pricing varies based on quantity, size, finish, and artwork complexity. Detailed quotes shared after discussion.
+      </p>
+    </div>
+  </section>
+);
 
 export default ProductPricing;
