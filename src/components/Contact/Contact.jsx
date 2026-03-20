@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Instagram, MapPin, MessageCircle, Send } from 'lucide-react';
+import { Phone, Mail, Instagram, MapPin, MessageCircle } from 'lucide-react';
 import './Contact.css';
 import qrImage from '../../assets/images/QR.png';
 

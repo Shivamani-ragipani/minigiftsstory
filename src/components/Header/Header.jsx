@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Menu, X, Gift } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import './Header.css';
+
+// ✅ Import your logo properly
+import logo from '../../assets/images/logo.png';
 
 const NAV_ITEMS = [
   { label: 'Home', id: 'home' },
@@ -40,9 +43,14 @@ const Header = ({ navigate, currentPage }) => {
     <>
       <header className={`header${scrolled ? ' scrolled' : ''}`}>
         <div className="header-inner container">
-          {/* Logo */}
-          <button className="logo" onClick={() => navigate('home')} aria-label="Mini Gifts Story Home">
-            <div className="logo-icon"><Gift size={20} /></div>
+
+          {/* ✅ Logo */}
+          <button
+            className="logo"
+            onClick={() => navigate('home')}
+            aria-label="Mini Gifts Story Home"
+          >
+            <img src={logo} alt="Mini Gifts Story Logo" className="logo-img" />
             <span className="logo-text">Mini Gifts Story</span>
           </button>
 
@@ -64,9 +72,12 @@ const Header = ({ navigate, currentPage }) => {
             >
               <ShoppingBag size={22} />
               {totalItems > 0 && (
-                <span className="cart-badge">{totalItems > 9 ? '9+' : totalItems}</span>
+                <span className="cart-badge">
+                  {totalItems > 9 ? '9+' : totalItems}
+                </span>
               )}
             </button>
+
             <button
               className="menu-btn"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -80,21 +91,32 @@ const Header = ({ navigate, currentPage }) => {
       </header>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} role="dialog" aria-label="Mobile menu">
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} role="dialog">
         <div className="mobile-menu-inner">
           {NAV_ITEMS.map(({ label, id }) => (
             <button key={id} className="mobile-nav-link" onClick={() => scrollTo(id)}>
               {label}
             </button>
           ))}
-          <button className="mobile-cart-btn" onClick={() => { setMenuOpen(false); navigate('cart'); }}>
+
+          <button
+            className="mobile-cart-btn"
+            onClick={() => {
+              setMenuOpen(false);
+              navigate('cart');
+            }}
+          >
             <ShoppingBag size={18} />
-            View Cart {totalItems > 0 && <span className="mobile-badge">{totalItems}</span>}
+            View Cart {totalItems > 0 && (
+              <span className="mobile-badge">{totalItems}</span>
+            )}
           </button>
         </div>
       </div>
 
-      {menuOpen && <div className="menu-overlay" onClick={() => setMenuOpen(false)} />}
+      {menuOpen && (
+        <div className="menu-overlay" onClick={() => setMenuOpen(false)} />
+      )}
     </>
   );
 };

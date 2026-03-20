@@ -54,6 +54,13 @@
   letter-spacing: -0.02em;
 }
 
+
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  /* border-radius: 50%; */
+}
 /* Desktop Nav */
 .nav-desktop {
   display: flex;
